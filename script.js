@@ -1,4 +1,5 @@
 const circle = document.getElementById('circle');
+const gameContainer = document.getElementById('game-container');
 let score = 0;
 
 circle.addEventListener('click', () => {
@@ -8,12 +9,12 @@ circle.addEventListener('click', () => {
 });
 
 function updateScore() {
-    circle.innerText = `Score: ${score}`;
+    console.log(score);
 }
 
 function moveCircle() {
-    const newX = Math.random() * (window.innerWidth - 100);
-    const newY = Math.random() * (window.innerHeight - 100);
+    const newX = Math.random() * (gameContainer.clientWidth - circle.clientWidth);
+    const newY = Math.random() * (gameContainer.clientHeight - circle.clientHeight);
     circle.style.left = `${newX}px`;
     circle.style.top = `${newY}px`;
 }
