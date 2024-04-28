@@ -1,5 +1,6 @@
 const circle = document.getElementById('circle');
 const gameContainer = document.getElementById('game-container');
+const scoreDisplay = document.getElementById('score');
 let score = 0;
 
 circle.addEventListener('click', () => {
@@ -9,7 +10,7 @@ circle.addEventListener('click', () => {
 });
 
 function updateScore() {
-    console.log(score);
+    scoreDisplay.textContent = `Score: ${score}`;
 }
 
 function moveCircle() {
